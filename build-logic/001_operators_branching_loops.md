@@ -176,25 +176,238 @@ minimumNumber(num1, num2, num3);    // 29 is the minimum number
 
 ## Intermediate
 
-1. Fizzbuzz - Write a program to return an array from 1 to 100. But for every multiple of 3, replace the number with "Fizz", for every multiple of 5, replace the number with "Buzz" and for every multiples of 3 & 5, replace with "FizzBuzz".
+<!-- Question 1 -->
+ 
+<details>
+  <summary>
+   1. Fizzbuzz - Write a program to return an array from 1 to 100. But for every multiple of 3, replace the number with "Fizz", for every multiple of 5, replace the number with "Buzz" and for every multiples of 3 & 5, replace with "FizzBuzz".
+   Your output should look something like this
+   
+   `1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, 16, 17 ..... `
+  </summary>
+    
+- `index.js`
+```javascript
+   for(let i =1; i<= 100; i++) {
+        if(i % 3 == 0 && i % 5 == 0)console.log("FizzBuzz ");
+        else if( i % 5 == 0) console.log("Buzz");
+        else if (i % 3 == 0) console.log("Fizz");
+        else console.log(i);
+   }    
+```
+</details>
+ 
+ <!-- Question 2 -->
+ 
+<details>
+  <summary>
+   2. Print the following star pattern :-
 
-    Your output should look something like this `1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, 16, 17 ..... `
+    * 
+    * * 
+    * * * 
+    * * * * 
+    * * * * *
+  </summary>
+    
+    
+- `index.js`
+```javascript
+for (let row = 1; row < 6; row++) {
+    for (let col = 0; col < row; col++){
+       console.log("* ");
+  }
+    console.log("");
+}
+```
+</details>
+ 
+ <!-- Question 3 -->
+ 
+<details>
+  <summary>
+   3. Write a program to take a number input from user and print multiplication table 12 times for that number.
+  </summary>
+    
+ - `index.html`
+```html
+   <label for="input">
+        Enter number :  <input type="number" id="input" name="input" />
+   </label>
+    <button id="check"> Check </button>
+```
+ 
+- `index.js`
+```javascript
+const checkBtn = document.querySelector("#check");
+const input = document.querySelector("#input");
+ 
+const table = (n) => {
+    for(let i =1 ; i<= 12; i++){
+        console.log(n*i);
+    }
+}    
+                         
+checkBtn.addEventListener("click", () => table(input.value) );
 
-2. Print the following star pattern :-
+```
+</details>
+ 
+ <!-- Question 4 -->
+ 
+<details>
+  <summary>
+   4. Write a program to return a Fibonacci series : 0,1,1,2,3,5,8,13,21....
+  </summary>
+ 
+- `index.js`
+```javascript
+let n1 = 0, n2 = 1, nextTerm;
 
-    \* \
-    \* \* \
-    \* \* \* \
-    \* \* \* \* \
-    \* \* \* \* \*
-
-3. Write a program to take a number input from user and print multiplication table 12 times for that number.
-
-4. Write a program to return a Fibonacci series : 0,1,1,2,3,5,8,13,21....
-
+for (let i = 1; i <= 10; i++) {
+    console.log(n1);
+    nextTerm = n1 + n2;
+    n1 = n2;
+    n2 = nextTerm;
+}
+    
+```
+</details>
+ 
+<!-- Question 5 -->
+ 
+<details>
+  <summary>   
 5. Write a program to take an input from a user and find its Factorial.
+   
    `Example: Factorial of 5 is 120`
-6. Write a Program to take a number input from user and find if the number is Prime or not.
+  </summary>
+    
+- `index.html`
+```html
+   <label for="input">
+        Enter number :  <input type="number" id="input" name="input" />
+   </label>
+    <button id="check"> Check </button>
+```
+    
+- `index.js`
+```javascript
+ const checkBtn = document.querySelector("#check");
+ const input = document.querySelector("#input");
+ 
+ const factorial = (n) => {
+    let ans = 1;
+    for(let i =n; i > 1; i--){
+       ans *= i;
+    }
+    console.log(ans);
+ }
+    
+checkBtn.addEventListener("click", () => factorial(input.value) );
+ 
+```
+</details>
+ 
+ <!-- Question 6 -->
+ 
+<details>
+  <summary>
+   6. Write a Program to take a number input from user and find if the number is Prime or not.
+  </summary>
+    
+- `index.html`
+```html
+   <label for="input">
+        Enter number :  <input type="number" id="input" name="input" />
+   </label>
+    <button id="check"> Check </button>
+```
+    
+- `index.js`
+```javascript
+const checkBtn = document.querySelector("#check");
+const input = document.querySelector("#input");
+    
+const checkPrime = (number) => {
+ let isPrime = true;
+   if (number === 1) {
+       console.log("1 is neither prime nor composite number.");
+   }
 
+   else if (number > 1) {
+
+       for (let i = 2; i < number/2 ; i++) {
+           if (number % i == 0) {
+               isPrime = false;
+               break;
+           }
+       }
+
+       if (isPrime) {
+           console.log(`${number} is a prime number`);
+       } else {
+           console.log(`${number} is a not prime number`);
+       }
+   }
+
+   else {
+       console.log("The number is not a prime number.");
+   }
+}
+                                  
+checkBtn.addEventListener("click", () => checkPrime(input.value) );
+```
+</details>
+ 
+ <!-- Question 7 -->
+ 
+<details>
+  <summary>   
 7. Write a program to take a day as an input and determine whether it is a weekday or weekend.
+   
    `Example: Tuesday is weekday.`
+  </summary>
+    
+- `index.html`
+```html
+   <label for="input">
+        Enter number :  <input type="text" id="input" name="input" />
+   </label>
+    <button id="check"> Check </button>
+```
+    
+- `index.js`
+```javascript
+ const checkBtn = document.querySelector("#check");
+ const input = document.querySelector("#input");
+   
+ const checkDay = (day) => {
+   day = day.toLowerCase();
+    if( day == "monday" || day == "tuesday" || day == "wednesday" || day == "thursday" || day == "friday"){
+       console.log(day + " is weekday");
+    } else if (day == "saturday" || day == "sunday"){
+       console.log(day + " is weekend");
+    } else {
+       console.log("Invalid Input");
+    }
+ }
+ 
+ checkBtn.addEventListener("click", () => checkDay(input.value) );
+ 
+```
+</details>
+ 
+ 
+
+
+    
+
+
+
+
+
+
+
+
+
