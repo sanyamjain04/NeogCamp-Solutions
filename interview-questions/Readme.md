@@ -181,14 +181,41 @@ blue.addEventListener("click", () => colorChange(blue) );
     5. Create a CLI app which takes name, unit test marks, pre final marks, final marks of 5 students. And then print who has the highest marks. What if I ask you to print the average as well?
   </summary>
     
-- `index.html`
-```html     
-    
-```
-    
 - `index.js`
 ```javascript
 
+const readline = require('readline-sync')
+
+const data = [];
+let maximumMarks = 0;
+let firstRank;
+
+for (let i = 0; i < 5; i++) {
+  const userName = readline.question("what's ypur name ");
+  const unitTestMarks = Number(readline.question("Enter your unit marks "));
+  const preFinalMarks = Number(readline.question("Enter your pre final marks "));
+  const finalMarks = Number(readline.question("Enter your final marks "));
+  const totalMarks = unitTestMarks + preFinalMarks + finalMarks;
+  console.log("------------")
+  
+  data.push({ userName, unitTestMarks, preFinalMarks, finalMarks, totalMarks });
+
+}
+
+for (let i = 0; i < data.length; i++) {
+  if (data[i].totalMarks > maximumMarks) {
+    maximumMarks = data[i].totalMarks;
+    firstRank = data[i].userName;
+  }
+}
+
+let average = 0;
+for (let i = 0; i < data.length; i++) {
+  average += data[i].totalMarks;
+}
+average /= data.length;
+
+console.log(firstRank + " has git the first Rank and Highest total mark is : " + maximumMarks + " and the average marks is " + average);
 
 ```
 </details>
@@ -281,15 +308,14 @@ loadingBtn.addEventListener("click", () => text.style.display = "none")
    10. Open your Github repo. Make a small change. And create a PR. Explain what you understand by Git, what's PR etc.
   </summary>
     
-- `index.html`
-```html     
-
-
 ```
-    
-- `index.js`
-```javascript
+Git is a popular version control system.
 
+It is used for:
+
+- Tracking code changes
+- Tracking who made changes
+- Coding collaboration
 ```
 </details>
 
@@ -321,16 +347,7 @@ Someone can ask to make the submit button disabled. Some can ask to make the inp
    12. Show me your portfolio. Okay, I like the button you have made. Can you re create the button without looking at source code? You're free to Google though. 
   </summary>
     
-- `index.html`
-```html     
 
-
-```
-    
-- `index.js`
-```javascript
-
-```
 </details>
 
 <!-- Question 13 -->
@@ -343,12 +360,41 @@ Someone can ask to make the submit button disabled. Some can ask to make the inp
     
 - `index.html`
 ```html     
+<h1> Hello </h1>
+<h2> Devlopers </h2>
+<button id="btn1"> Circle </button>
+<button id="btn2" > Star </button>
+
 
 
 ```
     
-- `index.js`
-```javascript
+- `index.css`
+```css
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --primary: #1e90ff;
+  --secondary: #ff45fff; 
+}
+
+h1 {
+  color : var(--primary);
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  color : var(--secondary);
+  font-family: 'Poppins', sans-serif;
+}
+
+#btn1 {
+  background-color : var(--primary);
+}
+
+#btn1 {
+  background-color : var(--secondary);
+}
 
 ```
 </details>
@@ -361,16 +407,30 @@ Someone can ask to make the submit button disabled. Some can ask to make the inp
    14. Create two objects with name, age, and yuga as `Ram, 25, Treta. Krishna, 31, Dwapar`. 
 Write a function which takes two objects and return the person with more age.
   </summary>
-    
-- `index.html`
-```html     
-
-
-```
-    
+        
 - `index.js`
 ```javascript
+const object1 = {
+  name: "Ram",
+  age: 25,
+  yuga: "Treta"
+}
 
+const object2 = {
+  name: "Krishna",
+  age: 23,
+  yuga: "Dwapar"
+}
+
+
+const powerful = (obj1, obj2) => {
+
+  if (obj1.age > obj2.age) console.log(obj1.name + " is elder.")
+  else console.log(obj2.name + " is elder.")
+
+}
+
+powerful(object1, object2);  // Ram is elder.
 ```
 </details>
 
@@ -381,15 +441,33 @@ Write a function which takes two objects and return the person with more age.
    15. Create two objects with name, power, and yuga as Ram, 2500, Treta. Krishna, 2325, Dwapar. Write a function which takes two objects and return the person with more `power`. 
   </summary>
     
-- `index.html`
-```html     
-
-
-```
-    
 - `index.js`
 ```javascript
 
+const object1 = {
+  name: "Ram",
+  power: 2500,
+  yuga: "Treta"
+}
+
+const object2 = {
+  name: "Krishna",
+  power: 2325,
+  yuga: "Dwapar"
+}
+
+
+const powerful = (obj1, obj2) => {
+
+  const powerPoints1 = obj1.power;
+  const powerPoints2 = obj2.power;
+
+  if (powerPoints1 > powerPoints2) console.log(obj1.name + " is more powerful with " + powerPoints1 + " points")
+  else console.log(obj2.name + " is more powerful with " + powerPoints2 + " points")
+
+}
+
+powerful(object1, object2); // Ram is more powerful with 2500 points
 ```
 </details>
 
@@ -401,16 +479,34 @@ Write a function which takes two objects and return the person with more age.
 Say if every character in name is worth 35 power points.
 Write a function which takes two objects and return the person with more power based on their name and power both.
   </summary>
-    
-- `index.html`
-```html     
-
-
-```
-    
+        
 - `index.js`
 ```javascript
 
+const object1 = {
+  name: "Ram",
+  power: 2500,
+  yuga: "Treta"
+}
+
+const object2 = {
+  name: "Krishna",
+  power: 2325,
+  yuga: "Dwapar"
+}
+
+
+const powerful = (obj1, obj2) => {
+
+  const namePoints1 = obj1.name.length * 35 + obj1.power;
+  const namePoints2 = obj2.name.length * 35 + obj2.power;
+
+  if (namePoints1 > namePoints2) console.log(obj1.name + " is more powerful with " + namePoints1 + " points")
+  else console.log(obj2.name + " is more powerful with " + namePoints2 + " points")
+
+}
+
+powerful(object1, object2);   // Ram is more powerful with 2605 points
 ```
 </details>
 
@@ -421,15 +517,39 @@ Write a function which takes two objects and return the person with more power b
    17. Create a CLI app which would detect fake news. This app will take news as input and then source. If source is Facebook or whatsapp then it will output user saying, `"Don't believe things on FB and Whatsapp"`. Can you extend this to include telegram as well?
   </summary>
     
-- `index.html`
-```html     
-
-
-```
     
 - `index.js`
 ```javascript
+const readline = require('readline-sync')
 
+const data = [];
+let maximumMarks = 0;
+let firstRank;
+
+for (let i = 0; i < 5; i++) {
+  const userName = readline.question("what's ypur name ");
+  const unitTestMarks = Number(readline.question("Enter your unit marks "));
+  const preFinalMarks = Number(readline.question("Enter your pre final marks "));
+  const finalMarks = Number(readline.question("Enter your final marks "));
+  const totalMarks = unitTestMarks + preFinalMarks + finalMarks;
+  console.log("------------")
+  data.push({ userName, unitTestMarks, preFinalMarks, finalMarks, totalMarks });
+
+}
+
+for (let i = 0; i < data.length; i++) {
+  if (data[i].totalMarks > maximumMarks) {
+    maximumMarks = data[i].totalMarks;
+    firstRank = data[i].userName;
+  }
+}
+let average = 0;
+for (let i = 0; i < data.length; i++) {
+  average += data[i].totalMarks;
+}
+average /= data.length;
+
+console.log(firstRank + " has git the first Rank and Highest total mark is : " + maximumMarks + " and the average marks is " + average)
 ```
 </details>
 
