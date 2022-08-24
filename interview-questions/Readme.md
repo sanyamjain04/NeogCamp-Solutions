@@ -10,11 +10,11 @@
     
 - `index.html`
 ```html
-    <label for="firstInput">
-      First Number: <input type="number" id="num1" name="firstInput" />
+    <label for="num1">
+      First Number: <input type="number" id="num1" />
     </label>
-    <label for="secondInput">
-      Second Number: <input type="number" id="num2" name="secondInput" />
+    <label for="num2">
+      Second Number: <input type="number" id="num2" />
     </label>
     
     <button id="add"> + </button>
@@ -61,8 +61,8 @@ div.addEventListener("click", () =>  math("/") );
     
 - `index.html`
 ```html     
-    <label for="inputText">
-        Enter Name :  <input type="text" id="input" name="inputText" />
+    <label for="input">
+        Enter Name :  <input type="text" id="input"  />
     </label>
     <p id="output"></p>
     <button id="plus"> + </button>
@@ -105,8 +105,8 @@ const addition = (add) => {
     
 - `index.html`
 ```html     
-    <label for="inputText">
-        Enter Name :  <input type="text" id="input" name="inputText" />
+    <label for="input">
+        Enter Name :  <input type="text" id="input" />
     </label>
     <p id="output"></p>
     <button id="h1"> H1 </button>
@@ -142,8 +142,8 @@ h3.addEventListener("click", () => change("h3") );
     
 - `index.html`
 ```html     
-    <label for="inputText">
-        Enter Name :  <input type="text" id="input" name="inputText" />
+    <label for="input">
+        Enter Name :  <input type="text" id="input" />
     </label>
     <p id="output"></p>
     <button id="red"> Red </button>
@@ -178,17 +178,17 @@ blue.addEventListener("click", () => colorChange(blue) );
 
  <details>
   <summary> 
-    5. Create a CLI app which takes name, unit test marks, pre final marks, final marks of 5 students. And then print who has the highest marks. What if I ask you to       print the average as well?
+    5. Create a CLI app which takes name, unit test marks, pre final marks, final marks of 5 students. And then print who has the highest marks. What if I ask you to print the average as well?
   </summary>
     
 - `index.html`
 ```html     
-
-
+    
 ```
     
 - `index.js`
 ```javascript
+
 
 ```
 </details>
@@ -203,13 +203,17 @@ blue.addEventListener("click", () => colorChange(blue) );
     
 - `index.html`
 ```html     
-
+<p id="text"> </p>
+<button id="loading"> Loading </button>
 
 ```
     
 - `index.js`
 ```javascript
+const text = document.querySelector("#text");
+const loadingBtn = document.querySelector("#loading");
 
+loadingBtn.addEventListener("click", () => text.style.display = "none")
 ```
 </details>
 
