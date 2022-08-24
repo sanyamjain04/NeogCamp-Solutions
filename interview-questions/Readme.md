@@ -310,12 +310,19 @@ loadingBtn.addEventListener("click", () => text.style.display = "none")
     
 ```
 Git is a popular version control system.
+ Version control, also known as source control, is the practice of tracking and managing changes to software code. 
 
 It is used for:
 
 - Tracking code changes
 - Tracking who made changes
 - Coding collaboration
+-------------
+
+Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. Once a pull request is opened,
+you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged 
+into the base branch.
+
 ```
 </details>
 
@@ -329,13 +336,52 @@ Someone can ask to make the submit button disabled. Some can ask to make the inp
     
 - `index.html`
 ```html     
-
+<label for="num1">
+  Password: <input type="password" id="num1" />
+</label>
+<label for="num2">
+  Confirm Password: <input type="password" id="num2" />
+</label>
+<p id="error"></p>
+<button disabled="disabled" id="btn"> submit</button>
 
 ```
     
 - `index.js`
 ```javascript
 
+const pass1 = document.querySelector("#num1");
+const pass2 = document.querySelector("#num2");
+const error = document.querySelector("#error");
+const btn = document.querySelector("#btn");
+
+const onCheck1 = () => {
+  if (pass1.value.length < 10) {
+    error.innerText = " you have to enter at least 10 digit!";
+    pass1.style.outlineColor = "#ff6666";
+    pass1.style.backgroundColor = "#ff666621";
+  } else {
+    error.innerText = "";
+    pass1.style.backgroundColor = "#fff";
+    pass1.style.outlineColor = "#66cc66";
+  }
+};
+
+const onCheck2 = () => {
+  if (pass1.value != pass2.value) {
+    pass2.style.outlineColor = "#ff6666";
+    pass2.style.backgroundColor = "#ff666621";
+    error.innerText = "passwords don't match";
+  } else {
+    pass2.style.outlineColor = "#66cc66";
+    pass2.style.backgroundColor = "#fff";
+    error.innerText = "";
+    btn.disabled = false
+  }
+};
+
+pass1.addEventListener("keyup", () => onCheck1());
+pass2.addEventListener("keyup", () => onCheck2());
 ```
 </details>
 
