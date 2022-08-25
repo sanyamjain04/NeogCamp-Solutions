@@ -18,7 +18,14 @@
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+const num1 = 20;
+const num2 = 40;
+
+const sum = (a, b) => {
+       return a + b;
+} 
+
+console.log(sum(num1, num2) );	  
 
 ```
 
