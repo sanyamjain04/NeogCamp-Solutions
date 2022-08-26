@@ -207,17 +207,14 @@ nameOfTriangle(30, 60, 90);  // Scalane Triangle
 **Input:** `arrayLength([1,5,3,7,8])` ––> **Output:** `5`
 </summary>
 
-  - `index.html`
-
-  ```html
-        (add html code here if needed)
-
-  ```
-
   -  `index.js`
 
   ```javascript
-        (add javacript code here if needed)	  
+const arrayLength = ([...arr]) => {
+    return arr.length;
+}
+
+arrayLength([0,1,2,3,4,5,6,7,8,9,10]);  // 11
 
   ```
 
@@ -234,17 +231,18 @@ nameOfTriangle(30, 60, 90);  // Scalane Triangle
 **Input:** `indexOf([1,6,3,5,8,9], 3)` ––> **Output:** `2`
 </summary>
 
-  - `index.html`
-
-  ```html
-        (add html code here if needed)
-
-  ```
 
   -  `index.js`
 
   ```javascript
-        (add javacript code here if needed)	  
+const indexOf = ([...arr], item) => {
+    for(let i =0; i< arr.length; i++){
+        if(arr[i] == item) return i;
+    }
+    return "Item not found";
+}
+
+indexOf([0,5,1,9,3,5,8,10], 3);    // 4
 
   ```
 
@@ -262,17 +260,17 @@ nameOfTriangle(30, 60, 90);  // Scalane Triangle
 **Input:** `replace([1,5,3,5,6,8], 5, 10)` ––> **Output:** `[1,10,3,10,6,8]`
 </summary>
 
-  - `index.html`
-
-  ```html
-        (add html code here if needed)
-
-  ```
-
   -  `index.js`
 
   ```javascript
-        (add javacript code here if needed)	  
+const replace = ([...arr], item, item2) => {
+    for(let i =0; i< arr.length; i++){
+        if(arr[i] == item) arr[i] = item2;
+         
+    }
+    return arr;
+}
+replace([0,5,1,9,3,5,8,10], 5, 99);    //  [0, 99, 1, 9, 3, 99, 8, 10]
 
   ```
 
@@ -289,17 +287,17 @@ nameOfTriangle(30, 60, 90);  // Scalane Triangle
 **Input:** `mergeArray([1,3,5], [2,4,6])` ––> **Output:** `[1,3,5,2,4,6]`
 </summary>
 
-  - `index.html`
-
-  ```html
-        (add html code here if needed)
-
-  ```
 
   -  `index.js`
 
   ```javascript
-        (add javacript code here if needed)	  
+const mergeArray = ([...arr1],[...arr2]) => {
+    for(let i =0; i< arr2.length; i++){
+       arr1.push(arr2[i]);         
+    }
+    return arr1;
+}
+mergeArray([1,3,5], [2,4,6]);   // [1, 3, 5, 2, 4, 6]
 
   ```
 
@@ -316,17 +314,16 @@ nameOfTriangle(30, 60, 90);  // Scalane Triangle
 **Input:** `charAt("neoGcamp", 4)` ––> **Output:** `c`
 </summary>
 
-  - `index.html`
-
-  ```html
-        (add html code here if needed)
-
-  ```
 
   -  `index.js`
 
   ```javascript
-        (add javacript code here if needed)	  
+const charAt = (string , index ) => {
+    return string.charAt(index);
+}
+
+charAt("neoGcamp", 4);  // 'c'
+	  
 
   ```
 
