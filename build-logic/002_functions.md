@@ -13,17 +13,18 @@
   Input: `power(2,3)` ––> **Output:** `8` 
   </summary>
 
-- `index.html`
-
-```html
-      (add html code here if needed)
-
-```
-
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+const power = (num, pow) => {
+    let number = 1;
+    for(let i = 0; i < pow; i++){
+        number *= num;
+    }
+    return number;
+} 
+
+power( 2 , 3);  // 8
 
 ```
 
@@ -40,17 +41,14 @@
 Input: `areaOfHexagon(10)` ––> **Output:** `259.80`
 </summary>
 
-- `index.html`
-
-```html
-      (add html code here if needed)
-
-```
-
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+const areaOfRegularHexagon = (side) => {
+    return (3 *  Math.sqrt(3) )/2 * side * side; 
+}
+
+areaOfRegularHexagon(10);   // 259.80
 
 ```
 
@@ -68,17 +66,20 @@ Input: `areaOfHexagon(10)` ––> **Output:** `259.80`
   **Input:** `noOfWords(We are neoGrammers)` ––> **Output:** `3`
 </summary>
 
-  - `index.html`
-
-  ```html
-        (add html code here if needed)
-
-  ```
-
   -  `index.js`
 
   ```javascript
-        (add javacript code here if needed)	  
+const noOfWords = (sentence) => {
+    let wordsCount = 0;
+    for(let i = 0; i< sentence.length; i++){
+        if(sentence[i] ===  " "){
+            wordsCount++;
+        }
+    }   
+    return wordsCount + 1;
+}   	  
+
+noOfWords("We are neoGrammers");   // 3
 
   ```
 
@@ -94,21 +95,23 @@ Input: `areaOfHexagon(10)` ––> **Output:** `259.80`
 **Example:**  
 **Input:** `findMin(3,5)` ––> **Output:** `3`  
 **Input:** `findMin(3,5,9,1)` ––> **Output:** `1`  
-*(Hint: Lookup rest parameters in JavaScript)4
+*(Hint: Lookup rest parameters in JavaScript)
 </summary>
-
-  - `index.html`
-
-  ```html
-        (add html code here if needed)
-
-  ```
 
   -  `index.js`
 
   ```javascript
-        (add javacript code here if needed)	  
 
+const minNum = (...nums) => {
+	let min = nums[0];
+  for (let i =1; i< nums.length; i++) {
+    if(nums[i] < min){
+		min = nums[i];
+    }
+  }
+  return min;
+} 
+minNum(3,5,9,1)  // 1
   ```
 
 </details> 
@@ -126,18 +129,20 @@ Input: `areaOfHexagon(10)` ––> **Output:** `259.80`
 *(Hint: Lookup rest parameters in JavaScript)*
 </summary>
 
-  - `index.html`
-
-  ```html
-        (add html code here if needed)
-
-  ```
 
   -  `index.js`
 
   ```javascript
-        (add javacript code here if needed)	  
-
+const maxNum = (...nums) => {
+	let max = nums[0];
+  for (let i =1; i< nums.length; i++) {
+    if(nums[i] > max){
+		max = nums[i]
+    }
+  }
+  return max;
+}
+maxNum(3,5,9,1);   // 9 
   ```
 
 </details> 
@@ -153,18 +158,35 @@ Input: `areaOfHexagon(10)` ––> **Output:** `259.80`
 **Input:** `typeOfTriangle(30, 60, 90)` ––> **Output:** `Scalene Triangle`
 </summary>
 
-  - `index.html`
-
-  ```html
-        (add html code here if needed)
-
-  ```
 
   -  `index.js`
 
   ```javascript
-        (add javacript code here if needed)	  
+const isTriangle = (a, b, c) => {
+    if(a == 0 || b == 0 || c == 0) return false;
+    if(a == undefined || b == undefined || c == undefined) return false;
+     if (a + b >= c && a + c >= b && b + c >= a)
+        return true;
+    else
+        return false;
+}
 
+const nameOfTriangle = (x, y, z) => {
+    if(isTriangle(x, y, z)){
+            
+        if(x === y && y === z ){
+            return "Equilateral Triangle";
+        }else if(x == y || y == z || z == x){
+            return "Isosceles Triangle";
+        }else {
+            return "Scalane Triangle";
+        }
+    }else {
+        return "Not a Triangle";
+    }
+}
+
+nameOfTriangle(30, 60, 90);  // Scalane Triangle
   ```
 
 </details> 
