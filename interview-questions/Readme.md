@@ -566,36 +566,14 @@ powerful(object1, object2);   // Ram is more powerful with 2605 points
     
 - `index.js`
 ```javascript
-const readline = require('readline-sync')
+const readline = require('readline-sync');
 
-const data = [];
-let maximumMarks = 0;
-let firstRank;
+const input = readline.question('Enter News : ');
+const source = readline.question('Enter Source : ').toLowerCase();
 
-for (let i = 0; i < 5; i++) {
-  const userName = readline.question("what's ypur name ");
-  const unitTestMarks = Number(readline.question("Enter your unit marks "));
-  const preFinalMarks = Number(readline.question("Enter your pre final marks "));
-  const finalMarks = Number(readline.question("Enter your final marks "));
-  const totalMarks = unitTestMarks + preFinalMarks + finalMarks;
-  console.log("------------")
-  data.push({ userName, unitTestMarks, preFinalMarks, finalMarks, totalMarks });
-
+if (source == "facebook" || source == "whatsapp" || source == "telegram") {
+  console.log("Don't believe things on FB , telegram and Whatsapp");
 }
-
-for (let i = 0; i < data.length; i++) {
-  if (data[i].totalMarks > maximumMarks) {
-    maximumMarks = data[i].totalMarks;
-    firstRank = data[i].userName;
-  }
-}
-let average = 0;
-for (let i = 0; i < data.length; i++) {
-  average += data[i].totalMarks;
-}
-average /= data.length;
-
-console.log(firstRank + " has git the first Rank and Highest total mark is : " + maximumMarks + " and the average marks is " + average)
 ```
 </details>
 
