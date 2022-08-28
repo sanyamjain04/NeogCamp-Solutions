@@ -289,14 +289,19 @@ loadingBtn.addEventListener("click", () => text.style.display = "none")
    9. Here's an API, it can give two errors. Either 404, or 401. If the error is 404, show the user `'page not found'` and if the error is 401, show the user `'you are not logged in'`.
   </summary>
     
-- `index.html`
-```html     
-
-
-```
-    
 - `index.js`
 ```javascript
+const url = "https://mystery-api.kushanksriraj.repl.co/get";  // this url dont work yo can see only one response
+
+fetch(url).then((resp) => {
+    if (resp.status = 404) {
+        document.write("page not found")
+    } else if (resp.status = 401) {
+        document.write(" You are not logged in")
+    }
+
+});
+
 
 ```
 </details>
