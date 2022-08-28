@@ -61,7 +61,14 @@ console.log(sum(num1, num2) );
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+
+const SI = (principal, rate, time) => {
+
+    return  ( principal * rate * time ) / 100 ;
+    
+}
+
+SI(100, 6, 2);  //   12
 
 ```
 
@@ -81,7 +88,11 @@ console.log(sum(num1, num2) );
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+const kineticEnergy = (mass, volume) => {
+    return .5 * mass * volume * volume;
+}
+
+kineticEnergy(5, 10);   // 250  
 
 ```
 
@@ -107,7 +118,11 @@ console.log(sum(num1, num2) );
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+const celcius = (fahrenheit ) => {
+    return ( fahrenheit - 32 ) * 5/9;
+}
+
+celcius(56);   //  13.33333333 
 
 ```
 
@@ -135,7 +150,26 @@ console.log(sum(num1, num2) );
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+const areaOfSquare = (side) => {
+    return side * side;
+}
+
+const perimeterOfSquare = (side) => {
+    return 4 * side;
+}
+
+const surfaceAreaOfCube = (side) => {
+    return 6 * side * side;
+}
+
+const volumeOfCube = (side) => {
+    return side * side * side;
+}
+areaOfSquare(3);              // 9
+perimeterOfSquare(3);         // 12
+surfaceAreaOfCube(3);         // 54
+volumeOfCube(3);              // 27
+
 
 ```
 
@@ -161,7 +195,14 @@ console.log(sum(num1, num2) );
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+const profitLoss = (cp, sp) => {
+    const diff = sp - cp;
+    if(diff > 0) return "Profit: " + diff;
+    else if (diff < 0) return "Loss: " + diff;
+    else return "No Profit No Loss";
+}
+
+profitLoss(1500, 2000)  // Profit: 2000
 
 ```
 
@@ -184,7 +225,15 @@ console.log(sum(num1, num2) );
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+const sum = (n) => {
+    let mul = 0;
+    for(let i = 1; i<= n; i++){
+        mul += i ;
+    }
+    return mul;
+}
+
+sum(100);    //  5050
 
 ```
 
@@ -210,7 +259,14 @@ console.log(sum(num1, num2) );
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+const oddNumber = (n) => {
+    if(n % 2 == 0) n -= 1; 
+    for(let i = n; i > 0; i -= 2){
+        console.log(i);
+    }
+}
+
+oddNumber(9);  // 9, 7, 5, 3, 1
 
 ```
 
@@ -233,7 +289,18 @@ console.log(sum(num1, num2) );
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+const stringSum = (n) => {
+    let length = n.toString().length;
+    let sum = 0;
+    for(let i =0; i< length; i++){
+        let rem = n % 10;
+        sum += rem;
+        n = parseInt(n /10);
+    }
+    return sum;
+}
+
+stringSum(4321);
 
 ```
 
@@ -258,7 +325,19 @@ console.log(sum(num1, num2) );
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+      const reverse = (n) => {
+  
+    let length = n.toString().length;
+    let sum = 0;
+    for(let i =0; i< length; i++){
+        let rem = n % 10;
+        sum = sum * 10 + rem; 
+        n = parseInt(n /10);
+    }
+    return sum;
+}
+
+reverse(1234);   // 4321
 
 ```
 
@@ -284,7 +363,19 @@ console.log(sum(num1, num2) );
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+const rotate = ( num, n) => {
+    let length = num.toString().length -1;
+    for(let i =0; i< n; i++){
+        let rem = num % 10;
+         num = parseInt(num /10);
+        num = (rem * Math.pow(10, length)) + num;
+        
+    }
+
+    return num;
+}
+	  
+rotate(1234, 2);   // 4312
 
 ```
 
@@ -314,7 +405,18 @@ console.log(sum(num1, num2) );
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+      const deciToBinary = (num) => {
+    let ans = 0; let i = 1;
+    while(num != 0){
+        let rem = num % 2;
+        ans =  rem * i + ans;
+        num = parseInt( num / 2);
+        i = i *10;
+    }
+    return ans;
+}
+
+deciToBinary(5);
 
 ```
 
