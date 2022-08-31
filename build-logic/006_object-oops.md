@@ -251,7 +251,26 @@ passFail();
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+class employee {
+  constructor(name, id, basicSalary, hra, allowances) {
+    this.name = name;
+    this.id = id;
+    this.basicSalary = basicSalary;
+    this.hra = hra;
+    this.allowances = allowances;
+  }
+  get getSalary() {
+    return this.basicSalary + this.hra + this.allowances;
+  }
+
+}
+
+const employee1 = new employee("sanyam", 1, 10000, 2000, 500);
+const employee2 = new employee("Aryan", 2, 12000, 2500, 800);
+console.log(employee1);
+console.log(employee2);
+console.log(employee1.getSalary);
+console.log(employee2.getSalary);	  
 
 ```
 
@@ -278,7 +297,27 @@ passFail();
 -  `index.js`
 
 ```javascript
-      (add javacript code here if needed)	  
+class bankAccount {
+  constructor(name, bankAccountNumber, accountBalance, accountType, ifsc,) {
+    this.name = name;
+    this.bankAccountNumber = bankAccountNumber;
+    this.accountBalance = accountBalance;
+    this.accountType = accountType;
+    this.ifsc = ifsc;
+  }
+}
+
+const customer1 = new bankAccount("Sanyam", 87718611, 5000, "Savings Account", "SJ015");
+const customer2 = new bankAccount("Yash", 98105507, 4000, "Current Account", "SJ255");
+const customer3 = new bankAccount("Shivam", 8965894, 6000, "Private Account", "SJ275");
+
+console.log(customer1.name, customer1.accountBalance);
+console.log(customer2.name, customer2.accountBalance);
+console.log(customer3.name, customer3.accountBalance);
+
+const averageAccountBalance = ( customer1.accountBalance + customer2.accountBalance + customer3.accountBalance ) / 3;
+
+console.log(averageAccountBalance);  
 
 ```
 
