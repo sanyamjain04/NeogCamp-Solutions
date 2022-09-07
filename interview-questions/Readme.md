@@ -348,7 +348,7 @@ Someone can ask to make the submit button disabled. Some can ask to make the inp
   Confirm Password: <input type="password" id="num2" />
 </label>
 <p id="error"></p>
-<button disabled="disabled" id="btn"> submit</button>
+<button disabled="true" id="btn"> submit</button>
 
 ```
     
@@ -377,6 +377,7 @@ const onCheck2 = () => {
     pass2.style.outlineColor = "#ff6666";
     pass2.style.backgroundColor = "#ff666621";
     error.innerText = "passwords don't match";
+    btn.disabled = true
   } else {
     pass2.style.outlineColor = "#66cc66";
     pass2.style.backgroundColor = "#fff";
