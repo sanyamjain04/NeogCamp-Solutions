@@ -124,7 +124,7 @@ const h2 = document.querySelector("#h2");
 const h3 = document.querySelector("#h3");
 
 const change = (a) => {
-  outputEl.outerHTML = `<${a}>` + inputEl.value + `<${a}/>`;
+  outputEl.innerHTML = `<${a}>` + inputEl.value + `<${a}/>`;
 };
 
 h1.addEventListener("click", () => change("h1") );
