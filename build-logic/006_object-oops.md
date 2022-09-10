@@ -417,7 +417,7 @@ const totalCartItems = (cart) => {
 const totalCartValue = (cart) => {
   let totalValue = 0;
   for (let i = 0; i < cart.length; i++) {
-    totalValue += cart[i].price;
+    totalValue += cart[i].price * cart[i].count;
   }
   return totalValue;
 }
@@ -428,7 +428,6 @@ const discountedValue = (data) => {
     totalDiscount += data[i].count * (data[i].price * data[i].discount).toFixed(2);
   }
   return totalDiscount;
-  console.log("Total Discounted Value: " + totalDiscount);
 }
 
 const totalTaxAmount = () => {
@@ -438,12 +437,12 @@ const totalTaxAmount = () => {
 console.log("Total No. of Items in Cart: " + totalCartItems(cartItems));
 console.log("Total Value of Items in Cart: " + totalCartValue(cartItems));
 console.log("Total Discounted Value: " + discountedValue(cartItems));
-console.log("Total Discounted Value: " + totalTaxAmount());
+console.log("Total Tax Value: " + totalTaxAmount());
 
 // Total No. of Items in Cart: 7
-// Total Value of Items in Cart: 439
+// Total Value of Items in Cart: 819
 // Total Discounted Value: 78.9
-// Total Discounted Value: 360.1	  
+// Total Tax Value: 740.1	  
 
 ```
 
