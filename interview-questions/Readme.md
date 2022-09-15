@@ -270,15 +270,14 @@ fetch(constructUrl)
    8. Here's an API. It will give an error. Write a web app, call this API and read the error message. Show user the error message.
   </summary>
     
-- `index.html`
-```html     
-
-
-```
-    
 - `index.js`
 ```javascript
+const url = "https://mystery-api.kushanksriraj.repl.com";
 
+
+fetch(url)
+  .then((res) => res.json())
+  .catch((err) =>document.write(" ERROR OCURRED : " + err));
 ```
 </details>
 
