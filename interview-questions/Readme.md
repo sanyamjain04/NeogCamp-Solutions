@@ -272,12 +272,13 @@ fetch(constructUrl)
     
 - `index.js`
 ```javascript
-const url = "https://mystery-api.kushanksriraj.repl.com";
+const url = "https://sanyamapi.sanym04.repl.co/name?text";
 
 
 fetch(url)
   .then((res) => res.json())
-  .catch((err) =>document.write(" ERROR OCURRED : " + err));
+  .catch((err) => document.write(" ERROR OCURRED : " + err));
+  
 ```
 </details>
 
@@ -290,7 +291,7 @@ fetch(url)
     
 - `index.js`
 ```javascript
-const url = "https://mystery-api.kushanksriraj.repl.co/get";  // this url dont work yo can see only one response
+const url = "https://sanyamapi.sanyam04.repl.co/error";
 
 fetch(url).then((resp) => {
     if (resp.status = 404) {
@@ -298,7 +299,6 @@ fetch(url).then((resp) => {
     } else if (resp.status = 401) {
         document.write(" You are not logged in")
     }
-
 });
 
 
