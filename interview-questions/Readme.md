@@ -582,6 +582,50 @@ if (source == "facebook" || source == "whatsapp" || source == "telegram") {
 ```
 </details>
 
+ 
+<!-- Question 22 -->
+ 
+ <details>
+  <summary>
+ 22. Create a password checker web app. If password is less than 10 characters then show an error to user otherwise show success. 
+    Extension:
+    Check button to be active only if password is greater than 10 characters..
+  </summary>
+    
+- `index.html`
+```html     
+    <label for="">Password Checker:</label>
+    <input type="password" id="input">
+    <button id="btn">Check</button>
+    <!-- disabled option in btn tag is for extension question -->
+    <p id="output"></p>
+
+```
+    
+- `index.js`
+```javascript
+
+const input = document.querySelector("#input");
+const output = document.querySelector("#output");
+const btn = document.querySelector("#btn");
+
+btn.disabled = true;
+
+const pswrdCheck = () => {
+    var pswrd = input.value.length;
+    if(pswrd > 10){
+        output.innerText = "Success"
+        btn.disabled = false;
+    }
+    else{
+        output.innerText = "Please enter the password length more than 10"
+        
+    }
+}
+
+input.addEventListener("keyup", () => pswrdCheck());
+```
+</details>
 
 
 
